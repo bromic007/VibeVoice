@@ -255,7 +255,7 @@ def main():
     except Exception as e:
         print(f"[ERROR] : {type(e).__name__}: {e}")
         print(traceback.format_exc())
-        print("Error loading model, try sdpa.")
+        print("Error loading the model. Please try using SDPA. However, note that only FlashAttention_2 has been fully tested, and using SDPA may result in lower audio quality.")
         model = VibeVoiceForConditionalGenerationInference.from_pretrained(
             args.model_path,
             torch_dtype=torch.bfloat16,
